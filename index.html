@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nicamco</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        color: #333;
+    }
+
+    header {
+        background: #333;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+
+    header img {
+        height: 40px;
+        width: auto;
+    }
+
+    nav {
+        display: flex;
+        gap: 1rem;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 0.8rem;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+
+    nav a:hover {
+        background: #666;
+    }
+
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .menu-toggle div {
+        width: 25px;
+        height: 3px;
+        background: white;
+        margin: 4px 0;
+    }
+
+    main {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 2rem;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #666;
+        background: #f1f1f1;
+        margin-top: 2rem;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 700px) {
+        nav {
+            display: none;
+            flex-direction: column;
+            background: #333;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+        }
+        nav a {
+            padding: 0.8rem;
+        }
+        nav.show {
+            display: flex;
+        }
+        .menu-toggle {
+            display: flex;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="https://via.placeholder.com/120x40?text=Logo" alt="Nicamco Logo">
+        <h1 style="margin: 0; font-size: 1.2rem;">Nicamco</h1>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <nav id="nav">
+        <a href="https://hightekkrednek.github.io/ResumeBuilder/" target="_blank">Resume Builder</a>
+        <a href="#">Internal Link</a>
+        <a href="#">External Link</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Welcome to Nicamco</h2>
+    <p>This is your central hub for tools, resources, and links. The design is responsive, so it works well on both desktop and mobile devices.</p>
+
+    <h3>Quick Links</h3>
+    <ul>
+        <li><a href="https://hightekkrednek.github.io/ResumeBuilder/" target="_blank">Resume Builder</a></li>
+        <li>Internal pages coming soon...</li>
+        <li>External resources coming soon...</li>
+    </ul>
+</main>
+
+<footer>
+    &copy; <span id="year"></span> Nicamco. All rights reserved.
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function toggleMenu() {
+        document.getElementById('nav').classList.toggle('show');
+    }
+</script>
+
+</body>
+</html>
